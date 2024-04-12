@@ -21,7 +21,24 @@ function Form(props) {
                 />
                 <select>
                     <option>Select a category</option>
+                    <option>Category 1</option>
+                    <option>Category 2</option>
                 </select>
+                <div className="control-buttons-container">
+                    <button type="button">Clear</button>
+                    <button type="button">Add</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
             </form>
         </main>
     )
