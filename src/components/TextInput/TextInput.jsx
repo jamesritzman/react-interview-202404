@@ -28,7 +28,7 @@ function TextInput(props) {
 
     return (
         <div className={`textinput-component ${containerClassname}`}>
-            <label htmlFor={inputId}>{labelText}</label>
+            <label htmlFor={inputId} className="input-label">{labelText}</label>
             <div className="input-wrapper">
                 <input
                     type="text"

@@ -1,21 +1,42 @@
+:root {
+    --max-display-area-width: 960px;
+    --component-block-margins: 0 auto 20px;
+}
+
 .form-page {
 
     .grid-container {
         display: grid;
         grid-template-columns: 200px minmax(0, 1fr);
-        max-width: 960px;
-        margin: 0 auto 20px;
+        max-width: var(--max-display-area-width);
+        margin: var(--component-block-margins);
+
+        .input-label {
+            text-align: right;
+            padding-right: 20px;
+        }
     }
 
     @media screen and (width < 720px) {
         .grid-container {
             /* stack elements by making only one column */
             grid-template-columns: minmax(0, 1fr);
+
+            .input-label {
+                text-align: center;
+                padding-right: 0;
+            }
         }
     }
 
 
     .control-buttons-container {
         text-align: right;
+        max-width: var(--max-display-area-width);
+        margin: var(--component-block-margins);
+
+        button + button {
+            margin-left: 20px;
+        }
     }
 }

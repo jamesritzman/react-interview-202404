@@ -12,7 +12,7 @@ function Dropdown(props) {
 
     return (
         <div className={`dropdown-component ${containerClassname}`}>
-            <label htmlFor={selectId}>Location</label>
+            <label htmlFor={selectId} className="input-label">Location</label>
             <select
                 id={selectId}
                 value={getsetValue.chosenLocation}

@@ -74,7 +74,7 @@ function Form(props) {
                 />
                 <div className="control-buttons-container">
                     <button type="button" onClick={clearValuesFromTable}>Clear</button>
-                    <button type="button" onClick={addEntryToTableData}>Add</button>
+                    <button type="button" className="btn-primary" onClick={addEntryToTableData}>Add</button>
                 </div>
                 <table>
                     <thead>
