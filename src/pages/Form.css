@@ -1,0 +1,9 @@
+.form-page {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        max-width: 960px;
+        margin: 0 auto 20px;
+    }
+}

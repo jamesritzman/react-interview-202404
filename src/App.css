@@ -2,8 +2,8 @@
   max-width: 1280px;
   min-width: 320px;
   width: 80%;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100vh; /* for old browsers, particularly older mobile browsers */
+  min-height: 100dvh; /* for newer browsers */
   margin: 0 auto;
   padding: 30px;
   text-align: center;

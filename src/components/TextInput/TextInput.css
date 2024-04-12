@@ -1,0 +1,10 @@
+.textinput-component {
+
+    .input-wrapper {
+        text-align: left;
+
+        .validation-message {
+            color: red;
+        }
+    }
+}
