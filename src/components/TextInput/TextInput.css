@@ -4,7 +4,7 @@
         text-align: left;
 
         input {
-            width: 50%;
+            width: 100%;
         }
 
         .validation-message {
