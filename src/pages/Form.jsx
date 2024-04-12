@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 // COMPONENTS
 import TextInput from '../components/TextInput/TextInput'
 import Dropdown from '../components/Dropdown/Dropdown'
+import DataTable from '../components/DataTable/DataTable'
 // APIs
 import { getLocations } from '../mock-api/apis'
 // CSS
@@ -42,6 +43,10 @@ function Form(props) {
 
     function clearValuesFromTable() {
         setTableData([]);
+
+        // Focus the name input so that the user doesn't have to click or tab to it
+        //  in order to add another name.
+        document.getElementById(nameInputId).focus();
     }
 
     function addEntryToTableData() {
@@ -87,19 +92,8 @@ function Form(props) {
                     <button type="button" onClick={clearValuesFromTable}>Clear</button>
                     <button type="submit" className="btn-primary" onClick={addEntryToTableData}>Add</button>
                 </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-                </table>
+                <DataTable tableData={tableData} />
             </form>
-            <p>{JSON.stringify(tableData)}</p>
         </main>
     )
 }

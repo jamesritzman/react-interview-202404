@@ -1,0 +1,33 @@
+.data-table-component {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-collapse: collapse;
+
+    col {
+        border: 1px solid black;
+    }
+
+    thead tr {
+        background-color: rgb(165, 165, 165);
+
+        th {
+            text-align: left;
+        }
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: rgb(226, 226, 226);
+    }
+
+    td {
+        width: 40%;
+        text-align: left;
+        padding: 3px;
+
+        & + td {
+            width: 60%;
+        }
+    }
+}
