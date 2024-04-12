@@ -3,8 +3,22 @@
     .input-wrapper {
         text-align: left;
 
+        input {
+            width: 50%;
+        }
+
         .validation-message {
             color: red;
+        }
+    }
+
+    @media screen and (width < 720px) {
+        .input-wrapper {
+            text-align: center;
+
+            input {
+                width: 75%;
+            }
         }
     }
 }

@@ -6,4 +6,11 @@
         max-width: 960px;
         margin: 0 auto 20px;
     }
+
+    @media screen and (width < 720px) {
+        .grid-container {
+            /* stack elements by making only one column */
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
 }
