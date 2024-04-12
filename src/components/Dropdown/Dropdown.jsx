@@ -13,8 +13,12 @@ function Dropdown(props) {
     return (
         <div className={`dropdown-component ${containerClassname}`}>
             <label htmlFor={selectId}>Location</label>
-            <select id={selectId}>
-                <option value="" disabled selected>Choose a location</option>
+            <select
+                id={selectId}
+                value={getsetValue.chosenLocation}
+                onChange={(e) => getsetValue.setChosenLocation(e.target.value)}
+            >
+                <option value="" disabled>Choose a location</option>
                 { renderOptions(options) }
             </select>
         </div>

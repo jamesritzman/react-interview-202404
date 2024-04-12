@@ -4,3 +4,15 @@
         width: 50%;
     }
 }
+
+@media screen and (width < 750px) {
+    .dropdown-component {
+        text-align: center;
+
+        select {
+            width: 75%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

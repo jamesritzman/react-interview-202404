@@ -67,6 +67,7 @@ function Form(props) {
                     </tbody>
                 </table>
             </form>
+            <p>{chosenLocation}</p>
         </main>
     )
 }
