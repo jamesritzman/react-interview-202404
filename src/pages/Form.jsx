@@ -7,11 +7,14 @@ import { getLocations } from '../mock-api/apis'
 // CSS
 import './Form.css'
 
+
+
 function Form(props) {
     const [name, setName] = useState(""); // value of the Name input
     const [nameIsValid, setNameIsValid] = useState(true); // is the value of the Name input valid (unique)?
     const [locations, setLocations] = useState([]); // list of locations to choose from
     const [chosenLocation, setChosenLocation] = useState(""); // the location the user chose from the dropdown
+    const [tableData, setTableData] = useState([]); // data to be displayed in the table
 
 
     async function loadLocations() {
@@ -34,6 +37,24 @@ function Form(props) {
         loadLocations()
     }, [])
 
+
+    function clearValuesFromTable() {
+        setTableData([]);
+    }
+
+    function addEntryToTableData() {
+        const newEntry = {
+            name: name,
+            location: chosenLocation
+        };
+        setTableData([...tableData, newEntry]);
+
+        // reset the input values
+        setName("");
+        setChosenLocation("");
+    }
+
+
     return (
         <main className="form-page">
             <form>
@@ -52,8 +73,8 @@ function Form(props) {
                     containerClassname="grid-container"
                 />
                 <div className="control-buttons-container">
-                    <button type="button">Clear</button>
-                    <button type="button">Add</button>
+                    <button type="button" onClick={clearValuesFromTable}>Clear</button>
+                    <button type="button" onClick={addEntryToTableData}>Add</button>
                 </div>
                 <table>
                     <thead>
@@ -67,6 +88,7 @@ function Form(props) {
                     </tbody>
                 </table>
             </form>
+            <p>{JSON.stringify(tableData)}</p>
         </main>
     )
 }
