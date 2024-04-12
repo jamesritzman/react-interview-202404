@@ -82,3 +82,7 @@ input, button {
     margin: 0;
     padding: 0;
 }
+
+input[type=text] {
+    padding: 2px;
+}
