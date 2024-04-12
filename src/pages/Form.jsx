@@ -16,6 +16,8 @@ function Form(props) {
     const [chosenLocation, setChosenLocation] = useState(""); // the location the user chose from the dropdown
     const [tableData, setTableData] = useState([]); // data to be displayed in the table
 
+    const nameInputId = "name-input";
+
 
     async function loadLocations() {
         const listOfLocations = await getLocations();
@@ -52,15 +54,24 @@ function Form(props) {
         // reset the input values
         setName("");
         setChosenLocation("");
+
+        // Focus the name input so that the user doesn't have to click or tab to it
+        //  in order to add another name.
+        document.getElementById(nameInputId).focus();
+    }
+
+    function handleFormSubmit(e) {
+        e.stopPropagation();
+        e.preventDefault();
     }
 
 
     return (
         <main className="form-page">
-            <form>
+            <form onSubmit={(e) => handleFormSubmit(e)}>
                 <TextInput
                     labelText="Name"
-                    inutId="name-input"
+                    inputId={nameInputId}
                     getsetValue={{name: name, setName: setName}}
                     getsetValidation={{nameIsValid: nameIsValid, setNameIsValid: setNameIsValid}} // could be abbreviated, but shown in full for clarity
                     placeholderText="Please enter a unique name"
@@ -74,7 +85,7 @@ function Form(props) {
                 />
                 <div className="control-buttons-container">
                     <button type="button" onClick={clearValuesFromTable}>Clear</button>
-                    <button type="button" className="btn-primary" onClick={addEntryToTableData}>Add</button>
+                    <button type="submit" className="btn-primary" onClick={addEntryToTableData}>Add</button>
                 </div>
                 <table>
                     <thead>
