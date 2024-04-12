@@ -50,6 +50,12 @@ function Form(props) {
     }
 
     function addEntryToTableData() {
+        // Validate entries
+        if (!name || !chosenLocation || !nameIsValid) {
+            alert("Please enter a (valid) name and select a location");
+            return;
+        }
+
         const newEntry = {
             name: name,
             location: chosenLocation
